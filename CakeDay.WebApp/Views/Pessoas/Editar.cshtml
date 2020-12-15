@@ -1,0 +1,35 @@
+﻿@model Pessoa
+
+@{
+    var pessoa = Model;
+}
+<div class="container">
+    <div class="row featurette">
+
+        <div class="my-5 col-md-6">
+            <h2 class="display-4"><span class=" text-primary">Editar</span></h2>
+            <p class="lead"><span class=" text-primary">@pessoa.Nome</span></p>
+            <p class="lead">Número de Identificação:</p>
+        </div>
+
+        <div class="col-md-6 d-none d-md-block" style=" background: url(https://i.ibb.co/vQtCrSF/undraw-Checklist-re-2w7v.png) no-repeat center center / contain;
+        min-height: 300px;">
+        </div>
+
+    </div>
+</div>
+        
+    <div class="container">
+        <form action="/Pessoas/Editar" method="post">
+            <div class="form-group">
+                <input type="text" value="@pessoa.IdNumber" disabled>
+                <input type="hidden" name="idnumber" value="@pessoa.IdNumber">
+            </div>
+            <div class="form-group">
+                <label for="InputNome">Nome</label>
+                <input type="text" class="form-control" id="InputNome" name="nome" value="@pessoa.Nome">
+            </div>
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <a href="/Pessoas/Listar" class="btn btn-primary">Voltar</a>
+        </form>
+    </div>
